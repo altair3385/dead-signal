@@ -17,7 +17,7 @@ export const CONTAINERS=[{id:'cabinet',name:'МЕДИЦИНСКИЙ ШКАФ',x:
 // Coordinates describe floor and object feet in the same space as clinic-v2.webp.
 // The eight-point footprint keeps the player's feet out of walls, including corners.
 export const NAV_OUT=[[64,0,300,940],[235,630,610,752],[540,700,1440,770],[894,667,967,723]];
-export const NAV_IN=[[625,239,1015,354],[774,325,918,532],[625,381,749,532],[738,440,794,512],[909,440,959,490],[950,294,1133,532],[1130,457,1177,502],[1169,296,1406,532],[1010,232,1050,265],[1040,211,1290,265]];
+export const NAV_IN=[[625,239,1015,354],[774,325,918,532],[625,381,749,532],[738,440,794,512],[909,432,970,492],[950,294,1133,532],[1130,457,1177,502],[1169,296,1406,532],[1010,232,1050,265],[1040,211,1290,265]];
 // Solid art bounds: no floor is permitted anywhere on a drawn object, including its top.
 export const OBSTACLES=[
  {id:'ambulance',inside:false,rect:[148,382,466,622]},
@@ -34,7 +34,7 @@ export const OBSTACLES=[
  {id:'reception-desk',inside:true,rect:[626,405,662,482]},
  {id:'cabinet',inside:true,rect:[1028,338,1095,433]},
  {id:'fridge',inside:true,rect:[948,330,985,421]},
- {id:'medical-chair',inside:true,rect:[950,453,1009,531]},
+ {id:'medical-chair',inside:true,rect:[950,480,1009,531]},
  {id:'sink',inside:true,rect:[1104,431,1135,531]},
  {id:'stool',inside:true,rect:[1073,496,1103,531]},
  {id:'operating-table',inside:true,rect:[1237,397,1348,486]},
