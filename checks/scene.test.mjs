@@ -18,3 +18,11 @@ function layers(x,y){let count=0;const ctx=new Proxy({drawImage(){count++}},{get
 assert.ok(layers(1058,390)>0);assert.equal(layers(1058,450),0);
 assert.ok(FOREGROUND.length>15);
 console.log('PASS: furniture/vehicle collisions, save relocation without item loss, gate route, foreground depth.');
+// Regression for walking on cabinet/table tops: every painted solid rectangle
+// must reject feet throughout its surface, not merely at its bottom edge.
+const {OBSTACLES}=await import('../dist/engine-v2.mjs');
+for(const o of OBSTACLES){const [left,top,right,bottom]=o.rect;for(let y=top;y<=bottom;y+=5)for(let x=left;x<=right;x+=5)assert.equal(walkable(x,y,o.inside),false,`${o.id} allows feet on its art at ${x},${y}`);}
+assert.equal(walkable(1058,390,true),false,'cabinet top was walkable in 0.3');
+assert.equal(walkable(743,303,true),false,'table top was walkable in 0.3');
+assert.equal(walkable(250,416,false),false,'ambulance roof was walkable in 0.3');
+console.log('PASS: full furniture/vehicle art is solid, including tops missed in 0.3.');

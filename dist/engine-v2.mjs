@@ -18,30 +18,30 @@ export const CONTAINERS=[{id:'cabinet',name:'МЕДИЦИНСКИЙ ШКАФ',x:
 // The eight-point footprint keeps the player's feet out of walls, including corners.
 export const NAV_OUT=[[64,0,300,940],[235,630,610,752],[540,700,1440,770],[894,667,967,723]];
 export const NAV_IN=[[625,239,1015,354],[774,325,918,532],[625,381,749,532],[738,440,794,512],[909,440,959,490],[950,294,1133,532],[1130,457,1177,502],[1169,296,1406,532],[1010,232,1050,265],[1040,211,1290,265]];
-// Furniture silhouettes are rendered separately; only their footprint blocks movement.
+// Solid art bounds: no floor is permitted anywhere on a drawn object, including its top.
 export const OBSTACLES=[
- {id:'ambulance',inside:false,rect:[148,442,463,622]},
- {id:'stretcher',inside:false,rect:[403,540,504,590]},
- {id:'bench-out',inside:false,rect:[650,651,801,688]},
- {id:'bin',inside:false,rect:[989,671,1030,701]},
- {id:'pine-left',inside:false,rect:[574,681,624,716]},
- {id:'pine-right',inside:false,rect:[1250,677,1290,707]},
- {id:'waiting-seat',inside:true,rect:[670,229,806,257]},
- {id:'side-seats',inside:true,rect:[626,280,675,356]},
- {id:'coffee-table',inside:true,rect:[712,316,775,337]},
- {id:'hall-chair',inside:true,rect:[873,381,913,429]},
- {id:'reception',inside:true,rect:[699,483,841,532]},
- {id:'reception-desk',inside:true,rect:[627,438,660,482]},
- {id:'cabinet',inside:true,rect:[1028,405,1094,432]},
- {id:'fridge',inside:true,rect:[950,389,983,419]},
- {id:'medical-chair',inside:true,rect:[951,497,1008,531]},
- {id:'sink',inside:true,rect:[1105,499,1134,531]},
- {id:'stool',inside:true,rect:[1073,512,1102,531]},
- {id:'operating-table',inside:true,rect:[1241,432,1345,486]},
- {id:'instrument-table',inside:true,rect:[1175,498,1245,532]},
- {id:'surgery-sink',inside:true,rect:[1171,391,1214,426]},
- {id:'office-desk',inside:true,rect:[1136,212,1273,238]},
- {id:'office-chair',inside:true,rect:[1206,239,1244,256]}
+ {id:'ambulance',inside:false,rect:[148,382,466,622]},
+ {id:'stretcher',inside:false,rect:[403,505,504,592]},
+ {id:'bench-out',inside:false,rect:[650,623,804,688]},
+ {id:'bin',inside:false,rect:[989,641,1031,703]},
+ {id:'pine-left',inside:false,rect:[548,573,645,716]},
+ {id:'pine-right',inside:false,rect:[1221,558,1325,708]},
+ {id:'waiting-seat',inside:true,rect:[670,191,807,258]},
+ {id:'side-seats',inside:true,rect:[626,254,676,359]},
+ {id:'coffee-table',inside:true,rect:[712,293,775,339]},
+ {id:'hall-chair',inside:true,rect:[873,330,916,430]},
+ {id:'reception',inside:true,rect:[699,459,841,532]},
+ {id:'reception-desk',inside:true,rect:[626,405,662,482]},
+ {id:'cabinet',inside:true,rect:[1028,338,1095,433]},
+ {id:'fridge',inside:true,rect:[948,330,985,421]},
+ {id:'medical-chair',inside:true,rect:[950,453,1009,531]},
+ {id:'sink',inside:true,rect:[1104,431,1135,531]},
+ {id:'stool',inside:true,rect:[1073,496,1103,531]},
+ {id:'operating-table',inside:true,rect:[1237,397,1348,486]},
+ {id:'instrument-table',inside:true,rect:[1175,461,1248,532]},
+ {id:'surgery-sink',inside:true,rect:[1171,370,1215,427]},
+ {id:'office-desk',inside:true,rect:[1134,177,1275,238]},
+ {id:'office-chair',inside:true,rect:[1205,211,1245,256]}
 ];
 const insideRect=(x,y,r)=>x>=r[0]&&x<=r[2]&&y>=r[1]&&y<=r[3];
 function floorAt(x,y,inside){return (inside?NAV_IN:NAV_OUT).some(r=>insideRect(x,y,r))&&!OBSTACLES.some(o=>o.inside===inside&&insideRect(x,y,o.rect));}

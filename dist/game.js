@@ -1,5 +1,5 @@
-import {WORLD,ITEMS,CONTAINERS,createState,capacity,weight,move,nearby,portal,take,use,complete,validState,repairPosition} from './engine-v2.mjs?v=3';
-import {drawForeground} from './scene-depth.mjs?v=3';
+import {WORLD,ITEMS,CONTAINERS,createState,capacity,weight,move,nearby,portal,take,use,complete,validState,repairPosition} from './engine-v2.mjs?v=4';
+import {drawForeground} from './scene-depth.mjs?v=4';
 const $=id=>document.getElementById(id),canvas=$('world'),ctx=canvas.getContext('2d'),SAVE='dead-signal-v2',PREFS='dead-signal-prefs-v2';
 let state=createState(),hasSave=false,storageOK=true,mode='menu',assets={},ready=false,last=0,t=0,walkPhase=0,walking=false,joy={x:0,y:0},keys=new Set(),cam={x:0,y:0,w:1280,h:720},selected='water',lootSelected=null,activeContainer=null,noticeUntil=0,radioUntil=0,saveAt=0,footAt=0,guideUntil=12,frameCount=0,frameTime=0;
 let prefs={sound:false,rain:true,fps:false,zoom:1};
