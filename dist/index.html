@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#101614"><meta name="description" content="DEAD SIGNAL. Первый сигнал — короткая вылазка в гаражи заброшенного города.">
+<title>DEAD SIGNAL — Первый сигнал</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main id="app">
+ <header><a class="brand" href="#" aria-label="DEAD SIGNAL, убежище">DEAD<span>SIGNAL</span><i></i></a><div class="build">ПЕРВЫЙ СИГНАЛ <span> / ПРОТОТИП 0.1</span></div><button id="sound" class="icon-btn" aria-label="Включить звук" aria-pressed="false">ЗВУК: ВЫКЛ</button></header>
+ <section id="shelter" class="screen">
+  <div class="scene-art"><img src="assets/shelter.webp" alt="Подвальное убежище с рацией, койкой и верстаком"><div class="art-shade"></div><div class="coordinate">43°06′ N · 131°53′ E<br><span>СЕКТОР 07 / УБЕЖИЩЕ</span></div><div class="lamp" id="lamp"></div><div class="scene-caption"><span class="eyebrow">ГЛАВА 01</span><h1>Кто-нибудь<br>ещё слышит?</h1><p id="shelter-copy">Город молчит. Рация садится.<br>Нужен аккумулятор из старых гаражей.</p></div></div>
+  <aside class="mission-panel"><div class="status"><i></i><span id="power-label">ПИТАНИЕ ОТСУТСТВУЕТ</span><span class="tiny">БАЗА</span></div><div class="mission-inner"><span class="eyebrow">СЛЕДУЮЩАЯ ВЫЛАЗКА</span><h2>Гаражный<br>кооператив</h2><p>За железной дорогой остались старые боксы. В одном из них должен быть рабочий аккумулятор.</p><div class="mission-photo"><img src="assets/garages.webp" alt="Заброшенный гаражный кооператив"><span>СЕКТОР 07 — ВОСТОК</span></div><div class="mission-spec"><span>ЦЕЛЬ<br><b>Аккумулятор ×1</b></span><span>ВРЕМЯ<br><b>1–3 минуты</b></span></div><button class="primary" id="go">ВЫЙТИ В ГОРОД <span>↗</span></button><p class="footnote">Ходи, обыскивай, возвращайся с добычей.</p><div id="saved-note" class="saved-note"></div><button id="restart" class="text-btn" hidden>Начать заново</button></div></aside>
+ </section>
+ <section id="expedition" class="screen" hidden>
+  <div class="game-top"><div><span class="eyebrow">СЕКТОР 07</span><h2>Гаражный кооператив</h2></div><button id="pause" class="icon-btn" aria-label="Пауза">Ⅱ ПАУЗА</button></div>
+  <div id="viewport"><canvas id="game" width="960" height="480" aria-label="Игровая локация: гаражи"></canvas><div class="game-vignette"></div><div class="game-hud"><span><i class="live"></i> ВЫЛАЗКА 01</span><span id="distance">120 М ДО ГАРАЖА</span></div><div id="hint" role="status"></div><div id="radio" hidden><span>▥ РАДИО / СЛАБЫЙ СИГНАЛ</span><p id="radio-text"></p></div><div id="tutorial">Удерживай стрелки, чтобы идти.<br>Подойди к ящику и нажми «Обыскать».</div><div id="progress-wrap" hidden><div id="progress"></div><span>ОБЫСК…</span></div><div id="pause-overlay" hidden><span class="eyebrow">ВЫЛАЗКА ПРИОСТАНОВЛЕНА</span><h2>Переведи дыхание.</h2><button class="primary" id="resume">ПРОДОЛЖИТЬ →</button><button class="text-btn" id="leave">Вернуться в убежище без добычи</button></div></div>
+  <div class="field-bottom"><div class="objective"><span class="eyebrow">ЗАДАЧА</span><p id="objective">Найти аккумулятор в гараже № 28</p></div><button id="bag-toggle" class="icon-btn">РЮКЗАК <span id="bag-count">0/3</span></button></div>
+  <div class="controls"><div class="movement"><button id="left" aria-label="Идти влево">←</button><button id="right" aria-label="Идти вправо">→</button></div><span class="keyboard-hint">A / D — движение · E — действие</span><button id="interact" class="action-btn" disabled>ПОДОЙДИ БЛИЖЕ</button></div>
+ </section>
+ <section id="complete" class="screen" hidden><div class="result-art"></div><div class="result-content"><span class="eyebrow"><i class="live"></i> ВЫЛАЗКА ЗАВЕРШЕНА</span><h1>Теперь<br>есть свет.</h1><p>Аккумулятор подключён. Впервые за долгое время<br>убежище перестало быть просто тёмным подвалом.</p><div class="loot-result"><span>ПРИНЕСЕНО</span><b>Аккумулятор ×1</b><b id="bonus-result"></b></div><blockquote>«…если слышишь… не выключай…»<small>НЕИЗВЕСТНАЯ ЧАСТОТА · 104.7</small></blockquote><button class="primary" id="to-base">ВЕРНУТЬСЯ В УБЕЖИЩЕ →</button><span id="save-result" class="footnote"></span></div></section>
+ <footer><span>ПОКА ЕСТЬ СИГНАЛ — ЕСТЬ КТО-ТО ЖИВОЙ.</span><span id="footer-state">ЛОКАЛЬНОЕ СОХРАНЕНИЕ</span></footer>
+</main>
+<dialog id="bag"><button id="bag-close" class="icon-btn">ЗАКРЫТЬ ×</button><span class="eyebrow">СНАРЯЖЕНИЕ</span><h2>Твой рюкзак</h2><div id="bag-items"></div><p class="footnote">Добыча сохранится после возвращения в убежище.</p></dialog>
+<script type="module" src="game.js"></script>
+</body></html>

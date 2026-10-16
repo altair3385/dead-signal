@@ -1,0 +1,7 @@
+export const WORLD=3600, START=150, BATTERY_X=2860;
+export const CONTAINERS=[{id:'scrap',x:940,label:'Ящик с инструментами',item:'Металлолом',duration:2.2},{id:'bandage',x:1880,label:'Сумка на полке',item:'Бинт',duration:2.6},{id:'battery',x:BATTERY_X,label:'Гараж № 28',item:'Аккумулятор',duration:4}];
+export function createRun(){return {x:START,facing:1,items:[],opened:[],search:null,searchTime:0,finished:false,walked:0};}
+export function nearby(run){if(run.finished)return null; if(run.x<245&&run.items.includes('Аккумулятор'))return {id:'exit',label:'Вернуться в убежище'};return CONTAINERS.find(c=>Math.abs(c.x-run.x)<95&&!run.opened.includes(c.id))??null;}
+export function interact(run){const target=nearby(run);if(!target||run.search)return null;if(target.id==='exit'){run.finished=true;return 'complete';}run.search=target.id;run.searchTime=0;return 'search';}
+export function tick(run,dt,direction){if(run.finished)return null;dt=Math.max(0,Math.min(dt,.05));if(run.search){const box=CONTAINERS.find(c=>c.id===run.search);run.searchTime+=dt;if(run.searchTime>=box.duration){run.opened.push(box.id);run.items.push(box.item);run.search=null;run.searchTime=0;return box.item;}return null;}if(direction){const before=run.x;run.x=Math.max(75,Math.min(WORLD-110,run.x+direction*155*dt));run.walked+=Math.abs(run.x-before);run.facing=direction>0?1:-1;}return null;}
+export function validSave(value){return !!value&&value.version===1&&value.power===true&&Array.isArray(value.stash)&&value.stash.includes('Аккумулятор');}
