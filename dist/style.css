@@ -9,3 +9,30 @@ dialog{color:var(--text);border:1px solid #6d7560;border-radius:5px;background:l
 /* Location selection stays reachable on short phone screens. */
 .menu-content{max-height:calc(100dvh - 40px);overflow-y:auto;touch-action:pan-y;scrollbar-width:thin}.menu-buttons #new-game{font-size:11px;min-height:38px}.menu-note{max-width:360px}
 @media(max-height:650px) and (orientation:landscape){.menu-content{max-width:100vw;width:100%;display:grid;grid-template-columns:1fr 1fr;column-gap:7vw;align-items:center;padding:20px 5vw;max-height:calc(100dvh - 30px)}.menu-content>.eyebrow{grid-column:1;grid-row:1}.menu-content h1{grid-column:1;grid-row:2;margin:6px 0;font-size:17vh}.menu-content .tagline{grid-column:1;grid-row:3}.menu-content .menu-buttons{grid-column:2;grid-row:1/5;margin-top:0;gap:8px}.menu-content .menu-buttons button{font-size:13px}.menu-content .menu-note{grid-column:1;grid-row:4;margin-top:12px}}
+/* 0.7 shelter: stash and backpack between sorties */
+#shelter{overflow:hidden}
+.shelter-art{position:absolute;inset:0;background:url('assets/shelter.webp') center/cover;filter:saturate(.8)}
+.shelter-shade{position:absolute;inset:0;background:linear-gradient(90deg,#0d1310f2,#0d1310d0 55%,#0d131088)}
+.shelter-panel{position:relative;width:min(1000px,100%);height:100dvh;overflow-y:auto;touch-action:pan-y;background:#121a16e8;border-right:1px solid #56614b80;box-sizing:border-box;padding-bottom:max(14px,env(safe-area-inset-bottom))}
+.shelter-panel .panel-heading>div>div{display:grid;gap:3px}
+.shelter-status{margin:12px 18px 0;font:11px monospace;letter-spacing:1px;color:#b7c19f}
+.shelter-body{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:14px 18px}
+.shelter-body>section{border:1px solid #56614b80;padding:12px;background:#18221b88}
+.shelter-body h3 span,.sortie h3>span{color:#9ba68e;font-size:10px;margin-left:6px}
+.shelter-body .item-grid{grid-template-columns:repeat(4,1fr)}
+.shelter-body .item-slot{max-height:92px}
+.shelter-body .weight-meter{margin-top:10px}
+.shelter-detail{margin:0 18px 12px}
+.shelter-detail>img{width:64px;height:64px}
+.shelter-detail>.shelter-item-actions{display:grid;gap:8px;flex:0 0 220px}
+.shelter-actions{display:flex;align-items:center;gap:14px;margin:0 18px 14px}
+.shelter-actions .metal{min-height:46px;padding:10px 18px;font-size:12px}
+#shelter-notice{font:11px monospace;color:#c9b98e}
+.sortie{margin:0 18px;border-top:1px solid #56614b80;padding-top:12px}
+.sortie-tasks{display:inline-flex;gap:12px;flex-wrap:wrap}
+.sortie-buttons{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:10px}
+.sortie-buttons .metal{display:grid;gap:6px;font-size:16px;padding:12px 16px}
+.sortie-buttons small{font:9px monospace;color:#c2c9a9;letter-spacing:1px}
+.sortie .fineprint{margin-top:10px}
+@media(max-width:700px){.shelter-body{grid-template-columns:1fr;gap:10px;padding:10px 12px}.shelter-detail{flex-wrap:wrap;margin:0 12px 10px}.shelter-detail>.shelter-item-actions{flex:1 1 100%;grid-template-columns:1fr 1fr}.shelter-body .item-grid{grid-template-columns:repeat(6,1fr)}.shelter-body .item-slot{max-height:56px}.shelter-actions,.sortie{margin-left:12px;margin-right:12px}.sortie-buttons{grid-template-columns:1fr}.shelter-status{margin:10px 12px 0}}
+@media(max-height:650px) and (orientation:landscape){.shelter-body{padding:8px 12px;gap:10px}.shelter-body .item-grid{grid-template-columns:repeat(6,1fr)}.shelter-body .item-slot{max-height:50px}.shelter-detail{padding:6px 10px}.shelter-detail>img{width:40px;height:40px}.shelter-detail .metal{min-height:38px;padding:6px 12px}.sortie-buttons .metal{min-height:44px;padding:6px 12px;font-size:13px}.shelter-status{margin-top:6px;font-size:9px}}
