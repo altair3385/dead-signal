@@ -36,3 +36,38 @@ dialog{color:var(--text);border:1px solid #6d7560;border-radius:5px;background:l
 .sortie .fineprint{margin-top:10px}
 @media(max-width:700px){.shelter-body{grid-template-columns:1fr;gap:10px;padding:10px 12px}.shelter-detail{flex-wrap:wrap;margin:0 12px 10px}.shelter-detail>.shelter-item-actions{flex:1 1 100%;grid-template-columns:1fr 1fr}.shelter-body .item-grid{grid-template-columns:repeat(6,1fr)}.shelter-body .item-slot{max-height:56px}.shelter-actions,.sortie{margin-left:12px;margin-right:12px}.sortie-buttons{grid-template-columns:1fr}.shelter-status{margin:10px 12px 0}}
 @media(max-height:650px) and (orientation:landscape){.shelter-body{padding:8px 12px;gap:10px}.shelter-body .item-grid{grid-template-columns:repeat(6,1fr)}.shelter-body .item-slot{max-height:50px}.shelter-detail{padding:6px 10px}.shelter-detail>img{width:40px;height:40px}.shelter-detail .metal{min-height:38px;padding:6px 12px}.sortie-buttons .metal{min-height:44px;padding:6px 12px;font-size:13px}.shelter-status{margin-top:6px;font-size:9px}}
+/* 0.8 T3: depth HUD, shelter modules, region map, run result */
+.depth-label{display:block;margin-top:4px;font:9px monospace;letter-spacing:1px;color:#9ba68e}
+.depth-label[data-depth="2"]{color:#c9b98e}.depth-label[data-depth="3"]{color:#d08f72}
+.modules{margin:0 18px 14px;border-top:1px solid #56614b80;padding-top:12px}
+.module-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:10px}
+.module-card{border:1px solid #56614b80;background:#18221b88;padding:10px;display:grid;gap:7px;align-content:start}
+.module-card h4{margin:0;font:13px monospace;letter-spacing:1px;color:#e3e5d1}
+.module-card p{margin:0;font-size:11px;color:#a8b39b;line-height:1.4}
+.module-card small{font:9px monospace;color:#8c9784}
+.module-card .metal{min-height:40px;padding:8px 10px;font-size:11px;letter-spacing:1px}
+.module-notice{display:block;margin-top:8px;font:11px monospace;color:#c9b98e;min-height:13px}
+.map-open{display:grid;gap:6px;width:100%;margin-top:10px;font-size:16px}
+.map-open small{font:9px monospace;color:#c2c9a9;letter-spacing:1px}
+#map{background:#0d1310}
+.map-wrap{height:100dvh;overflow-y:auto;touch-action:pan-y;box-sizing:border-box;padding-bottom:max(14px,env(safe-area-inset-bottom))}
+.map-wrap .panel-heading>div>div{display:grid;gap:3px}
+.map-body{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:16px;padding:14px 18px}
+.region-map{position:relative;aspect-ratio:4/3;border:1px solid #56614b;background:radial-gradient(circle at 30% 40%,#26302a,#141b17 70%);overflow:hidden}
+.region-map svg{position:absolute;inset:0;width:100%;height:100%}
+.map-forest{fill:#1e2b20}.map-river{fill:none;stroke:#3b5560;stroke-width:2.2}.map-rail{fill:none;stroke:#5b5d55;stroke-width:.6;stroke-dasharray:1.5 1}
+.map-road{stroke:#7d8070;stroke-width:.5}.map-road.far{stroke:#4a4d44;stroke-dasharray:1 1.2}
+.map-node{position:absolute;transform:translate(-50%,-50%);font:9px monospace;letter-spacing:1px;padding:4px 6px;border:1px solid #6b735d;background:#161f19ee;color:#cfd3bd;white-space:nowrap}
+.map-node.home{border-color:#a1aa72;color:#e9e6cf;background:#3a4329ee}
+.map-node.locked{color:#6f776a;border-style:dashed}
+.map-node.open.risk-2{border-color:#c9b98e}.map-node.open.risk-3{border-color:#d08f72}
+.map-side{display:grid;gap:12px;align-content:start}
+.map-card{border:1px solid #56614b80;background:#18221b88;padding:12px;display:grid;gap:8px}
+.map-card h4{margin:0;font:14px monospace;letter-spacing:1px;color:#e3e5d1}
+.map-card small{font:9px monospace;color:#9ba68e;letter-spacing:1px}
+.map-card p{margin:0;font-size:12px;color:#a8b39b;line-height:1.45}
+.map-card .metal{min-height:46px;padding:10px;font-size:13px}
+.rr-grid{grid-template-columns:repeat(4,1fr);margin:10px 0;max-width:320px}
+#run-result p{margin:8px 0}
+@media(max-width:700px){.module-cards{grid-template-columns:1fr}.modules{margin-left:12px;margin-right:12px}.map-body{grid-template-columns:1fr;padding:10px 12px}}
+@media(max-height:650px) and (orientation:landscape){.map-body{gap:10px;padding:8px 12px}.region-map{aspect-ratio:auto;height:calc(100dvh - 80px)}.module-cards{gap:6px}.module-card{padding:6px}}
