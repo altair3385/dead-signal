@@ -1,0 +1,14 @@
+{
+  "name": "DEAD SIGNAL Claude full handoff",
+  "date_user_timezone": "2026-10-18",
+  "current_version": "0.6",
+  "source_commit": "646c01e07dabb20367f0eeeec13580ba104b4a31",
+  "unique_reference_images": 104,
+  "live_url": "https://dead-signal-first-expedition.speedy-trout-1704.chatgpt.site",
+  "canonical_source": "CURRENT_GAME_V0_6",
+  "code_owner_next": "Claude",
+  "has_secrets": false,
+  "edition": "compact Claude start",
+  "visuals_resampled": true,
+  "max_reference_edge": 1200
+}
