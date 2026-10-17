@@ -1,4 +1,4 @@
-import {walkable,move,WORLD} from './engine-v2.mjs?v=7';
+import {walkable,move,WORLD} from './engine-v2.mjs?v=8';
 export const MAGAZINE=8;
 export function createCombat(){return {ammo:8,reloading:0,cooldown:0,angle:-Math.PI/2,weapon:'pm',tracers:[],flash:0,hit:0,kills:0,clock:0,noise:0,enemies:[{id:1,location:'clinic',x:1120,y:738,inside:false,hp:90,awake:false,attack:0,hurt:0},{id:2,location:'clinic',x:690,y:736,inside:false,hp:90,awake:false,attack:0,hurt:0},{id:3,location:'clinic',x:830,y:289,inside:true,hp:90,awake:false,attack:0,hurt:0},{id:4,location:'garages',x:1060,y:440,inside:false,hp:90,awake:false,attack:0,hurt:0},{id:5,location:'garages',x:700,y:420,inside:false,hp:90,awake:false,attack:0,hurt:0},{id:6,location:'garages',x:330,y:430,inside:false,hp:90,awake:false,attack:0,hurt:0}]};}
 export function reload(c){if(c.weapon!=='pm'||c.reloading>0||c.ammo===MAGAZINE)return false;c.reloading=1.15;return true;}
