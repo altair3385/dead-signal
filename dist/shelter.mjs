@@ -1,7 +1,7 @@
 // Shelter modules: medbay heals, workshop repairs, upgrades are paid from the stash.
-import {MODULES} from './data/shelter.mjs?v=8';
-import {itemDef,parseKey,makeKey} from './data/items.mjs?v=8';
-export {createShelterState,MODULES} from './data/shelter.mjs?v=8';
+import {MODULES} from './data/shelter.mjs?v=9';
+import {itemDef,parseKey,makeKey} from './data/items.mjs?v=9';
+export {createShelterState,MODULES} from './data/shelter.mjs?v=9';
 export const moduleLevel=(s,id)=>s.shelter?.modules?.[id]||1;
 export const moduleEffect=(s,id)=>MODULES.find(m=>m.id===id).levels[moduleLevel(s,id)-1].effect;
 export const nextLevel=(s,id)=>MODULES.find(m=>m.id===id).levels[moduleLevel(s,id)]||null;
